@@ -1,16 +1,73 @@
-# React + Vite
+# AASTU Gebeya Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Frontend of the AASTU Gebeya platform built using React and Vite.
 
-Currently, two official plugins are available:
+## 🚀 Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React
+- Vite
+- CSS3
+- JavaScript (ES6+)
 
-## React Compiler
+## 📂 Project Structure
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+src/
+ ├── assets/
+ ├── components/
+ ├── App.jsx
+ ├── main.jsx
+ └── styles/
+```
 
-## Expanding the ESLint configuration
+## ⚙️ Installation
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Clone the repository:
+
+```bash
+git clone https://github.com/Hayat-Musema/AASTU-Gebeya.git
+```
+
+Navigate to the frontend directory:
+
+```bash
+cd Frontend/AASTU-Gebeya-Frontend
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+## ▶️ Run Development Server
+
+```bash
+npm run dev
+```
+
+The application will run locally on:
+
+```bash
+http://localhost:5173
+```
+
+## 📦 Build for Production
+
+```bash
+npm run build
+```
+
+## ✨ Features
+
+- Responsive modern UI
+- Product listing pages
+- Product details page
+- Explore page
+- User profile page
+- Login page
+- Seller item listing interface
+
+## 👨‍💻 Developed By
+
+Hayat Musema
