@@ -1,0 +1,284 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #333;
+  background-color: #f5fbfa;
+  line-height: 1.6;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-shell,
+.home-page {
+  min-height: 100vh;
+  background: #f5fbfa;
+  color: #333;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.app-shell.dark-theme {
+  background: #12191b;
+  color: #e8f4f1;
+}
+
+.dark-theme .home-page,
+.dark-theme .main-content {
+  background: #12191b;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+button {
+  font-family: inherit;
+}
+
+a {
+  transition: all 0.3s ease;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Main layout with sidebar */
+.main-layout {
+  display: flex;
+  flex: 1;
+  width: 100%;
+}
+
+.main-content {
+  flex: 1;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.dark-theme .header {
+  background: rgba(27, 36, 38, 0.96);
+  border-bottom-color: rgba(141, 235, 211, 0.14);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+}
+
+.dark-theme .logo,
+.dark-theme .nav-links a:hover,
+.dark-theme .search-btn:hover,
+.dark-theme .theme-toggle {
+  color: #8debd3;
+}
+
+.dark-theme .nav-links a,
+.dark-theme .search-btn,
+.dark-theme .browse-header h2,
+.dark-theme .featured-selections h2,
+.dark-theme .listings-header h2,
+.dark-theme .product-info h3,
+.dark-theme .listing-info h3,
+.dark-theme .user-name {
+  color: #e8f4f1;
+}
+
+.dark-theme .search-bar input {
+  background: #212b2e;
+  border-color: rgba(141, 235, 211, 0.18);
+  color: #e8f4f1;
+}
+
+.dark-theme .search-bar input::placeholder,
+.dark-theme .search-bar i,
+.dark-theme .product-seller,
+.dark-theme .listing-seller,
+.dark-theme .sidebar-tagline,
+.dark-theme .user-role {
+  color: #9fb0ad;
+}
+
+.dark-theme .theme-toggle {
+  background: #203331;
+  border-color: rgba(141, 235, 211, 0.28);
+}
+
+.dark-theme .sidebar,
+.dark-theme .product-card,
+.dark-theme .listing-card {
+  background: #1b2426;
+  border-color: rgba(141, 235, 211, 0.12);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+.dark-theme .sidebar-header,
+.dark-theme .sidebar-footer {
+  border-color: rgba(141, 235, 211, 0.12);
+}
+
+.dark-theme .nav-item {
+  color: #b6c7c4;
+}
+
+.dark-theme .nav-item:hover {
+  background: rgba(141, 235, 211, 0.1);
+  color: #8debd3;
+}
+
+.dark-theme .nav-item.active,
+.dark-theme .category-card,
+.dark-theme .footer {
+  background: #056f62;
+}
+
+.dark-theme .category-card:hover {
+  background: #078575;
+}
+
+.dark-theme .hero-banner {
+  background:
+    radial-gradient(circle at 85% 18%, rgba(141, 235, 211, 0.2), transparent 25%),
+    linear-gradient(135deg, #1d2b2e 0%, #063f38 55%, #056f62 100%);
+}
+
+.dark-theme .product-badge {
+  background: #203331;
+  color: #8debd3;
+}
+
+.dark-theme .product-price,
+.dark-theme .listing-price,
+.dark-theme .view-all,
+.dark-theme .view-more {
+  color: #8debd3;
+}
+
+.dark-theme .login-page {
+  background:
+    radial-gradient(circle at 8% 12%, rgba(4, 124, 109, 0.28), transparent 30%),
+    linear-gradient(120deg, #11191b 0%, #172225 50%, #0d2f2c 100%);
+}
+
+.dark-theme .login-shell,
+.dark-theme .login-form-panel {
+  background: #1b2426;
+}
+
+.dark-theme .form-heading h2,
+.dark-theme .role-card strong,
+.dark-theme .login-link,
+.dark-theme .terms-row,
+.dark-theme .field-label input {
+  color: #e8f4f1;
+}
+
+.dark-theme .form-heading p,
+.dark-theme .field-label span,
+.dark-theme .field-label small {
+  color: #9fb0ad;
+}
+
+.dark-theme .role-card {
+  background: #202b2e;
+  border-color: rgba(141, 235, 211, 0.16);
+  color: #e8f4f1;
+}
+
+.dark-theme .role-card.active {
+  background: #203331;
+  border-color: #8debd3;
+}
+
+.dark-theme .field-label input {
+  background: #202b2e;
+}
+
+.dark-theme .back-button,
+.dark-theme .help-button {
+  background: #202b2e;
+  color: #e8f4f1;
+}
+
+.dark-theme .profile-page,
+.dark-theme .profile-content {
+  background: #12191b;
+  color: #e8f4f1;
+}
+
+.dark-theme .profile-topbar {
+  background: #1b2426;
+  border-bottom-color: rgba(141, 235, 211, 0.14);
+}
+
+.dark-theme .profile-summary h2,
+.dark-theme .listings-title-row h2,
+.dark-theme .profile-listing-card h3 {
+  color: #e8f4f1;
+}
+
+.dark-theme .profile-topbar button,
+.dark-theme .listings-title-row p,
+.dark-theme .profile-meta span {
+  color: #b6c7c4;
+}
+
+.dark-theme .profile-topbar h1,
+.dark-theme .profile-topbar nav .active,
+.dark-theme .profile-kicker {
+  color: #8debd3;
+}
+
+.dark-theme .profile-topbar nav .active {
+  border-bottom-color: #8debd3;
+}
+
+.dark-theme .profile-meta span,
+.dark-theme .profile-listing-card {
+  background: #1b2426;
+  border-color: rgba(141, 235, 211, 0.14);
+}
+
+.dark-theme .listing-art,
+.dark-theme .listing-actions button {
+  background: #202b2e;
+  color: #b6c7c4;
+}
+
+.dark-theme .logout-button {
+  color: #e8f4f1;
+}
+
+/* Prevent layout shift scrollbar */
+@media (max-width: 1024px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+
+  .main-layout {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 13px;
+  }
+}
