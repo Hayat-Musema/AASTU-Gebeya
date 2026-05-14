@@ -13,7 +13,7 @@ The platform enables students to easily buy, sell, and explore products inside t
 
 ---
 
-# 🚀 Features
+# Features
 
 - User authentication system
 - Buyer and seller accounts
@@ -27,7 +27,7 @@ The platform enables students to easily buy, sell, and explore products inside t
 
 ---
 
-# 🛠️ Tech Stack
+#  Tech Stack
 
 ## Frontend
 - React
@@ -44,7 +44,7 @@ The platform enables students to easily buy, sell, and explore products inside t
 
 ---
 
-# 📂 Project Structure
+#  Project Structure
 
 ```bash
 AASTU-Gebeya/
@@ -59,7 +59,7 @@ AASTU-Gebeya/
 
 ---
 
-# ⚙️ Installation
+#  Installation
 
 ## 1. Clone the Repository
 
@@ -77,7 +77,7 @@ cd AASTU-Gebeya
 
 ---
 
-# ▶️ Frontend Setup
+#  Frontend Setup
 
 ```bash
 cd Frontend/AASTU-Gebeya-Frontend
@@ -93,7 +93,7 @@ http://localhost:5173
 
 ---
 
-# ▶️ Backend Setup
+#  Backend Setup
 
 ```bash
 cd Backend
@@ -103,7 +103,7 @@ npm start
 
 ---
 
-# 📦 Environment Variables
+#  Environment Variables
 
 Create a `.env` file inside the backend folder and configure:
 
@@ -115,7 +115,7 @@ JWT_SECRET=your_secret_key
 
 ---
 
-# ✨ Project Goal
+#  Project Goal
 
 The main goal of AASTU Gebeya is to create a trusted digital marketplace for university students where they can easily exchange products and services within campus.
 
@@ -127,14 +127,13 @@ The platform aims to:
 
 ---
 
-# 👨‍💻 Developed By
+#  Developed By
 
-AASTU Gebeya Team
+Hayat Musema
 
-- :contentReference[oaicite:0]{index=0}
 
 ---
 
-# 📄 License
+#  License
 
 This project is developed for educational and innovation purposes.
