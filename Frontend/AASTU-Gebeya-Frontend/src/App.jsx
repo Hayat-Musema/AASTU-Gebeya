@@ -6,10 +6,14 @@ import FeaturedSelections from './FeaturedSelections'
 import RecentListings from './RecentListings'
 import Footer from './Footer'
 import LoginPage from './LoginPage'
+import SignInPage from './SignInPage'
 import ProfilePage from './ProfilePage'
 import ExplorePage from './ExplorePage'
 import ProductDetailsPage from './ProductDetailsPage'
 import SellItemPage from './SellItemPage'
+import CheckoutPage from './CheckoutPage'
+import MobilePaymentPage from './MobilePaymentPage'
+import OrderConfirmationPage from './OrderConfirmationPage'
 import './App.css'
 import { useState } from 'react'
 
@@ -20,6 +24,11 @@ function App() {
 
   const showLogin = () => {
     setPage('login')
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  const showSignIn = () => {
+    setPage('signin')
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
@@ -43,6 +52,21 @@ function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
+  const showCheckout = () => {
+    setPage('checkout')
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  const showMobilePayment = () => {
+    setPage('mobilepayment')
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  const showOrderConfirmation = () => {
+    setPage('orderconfirmation')
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
   const showProductDetails = (product) => {
     setSelectedProduct(product)
     setPage('details')
@@ -50,11 +74,13 @@ function App() {
   }
 
   const handleHomeClick = (event) => {
-    if (event.target.closest('[data-profile-link], [data-explore-link]')) {
+    // Let header nav links and profile/explore/home links handle themselves
+    if (event.target.closest('[data-profile-link], [data-explore-link], [data-home-link]')) {
       return
     }
-
-    if (event.target.closest('button')) {
+    // Only trigger login for non-nav buttons (e.g. hero CTA), not header or sidebar buttons
+    const btn = event.target.closest('button')
+    if (btn && !btn.closest('.header') && !btn.closest('.sidebar')) {
       showLogin()
     }
   }
@@ -62,11 +88,29 @@ function App() {
   return (
     <div className={`app-shell ${isDarkTheme ? 'dark-theme' : ''}`}>
       {page === 'login' && (
-        <LoginPage onBackClick={showHome} onProfileClick={showProfile} />
+        <LoginPage
+          onBackClick={showHome}
+          onProfileClick={showProfile}
+          onSellerSignUp={showSell}
+          onSignInClick={showSignIn}
+        />
+      )}
+
+      {page === 'signin' && (
+        <SignInPage
+          onBackClick={showHome}
+          onSignUpClick={showLogin}
+          onProfileClick={showProfile}
+        />
       )}
 
       {page === 'profile' && (
-        <ProfilePage onHomeClick={showHome} onLogout={showLogin} />
+        <ProfilePage
+          onHomeClick={showHome}
+          onLogout={showSignIn}
+          onExploreClick={showExplore}
+          onSellClick={showSell}
+        />
       )}
 
       {page === 'explore' && (
@@ -91,6 +135,7 @@ function App() {
           onLoginClick={showLogin}
           onProfileClick={showProfile}
           onSellClick={showSell}
+          onCheckoutClick={showCheckout}
           onThemeToggle={() => setIsDarkTheme((current) => !current)}
         />
       )}
@@ -103,6 +148,44 @@ function App() {
           onLoginClick={showLogin}
           onProfileClick={showProfile}
           onSellClick={showSell}
+          onThemeToggle={() => setIsDarkTheme((current) => !current)}
+        />
+      )}
+
+      {page === 'checkout' && (
+        <CheckoutPage
+          isDarkTheme={isDarkTheme}
+          onExploreClick={showExplore}
+          onHomeClick={showHome}
+          onLoginClick={showLogin}
+          onProfileClick={showProfile}
+          onSellClick={showSell}
+          onMobilePaymentClick={showMobilePayment}
+          onOrderConfirmClick={showOrderConfirmation}
+          onThemeToggle={() => setIsDarkTheme((current) => !current)}
+        />
+      )}
+
+      {page === 'mobilepayment' && (
+        <MobilePaymentPage
+          isDarkTheme={isDarkTheme}
+          onExploreClick={showExplore}
+          onHomeClick={showHome}
+          onLoginClick={showLogin}
+          onProfileClick={showProfile}
+          onSellClick={showSell}
+          onBackToPayment={showCheckout}
+          onOrderConfirmClick={showOrderConfirmation}
+          onThemeToggle={() => setIsDarkTheme((current) => !current)}
+        />
+      )}
+
+      {page === 'orderconfirmation' && (
+        <OrderConfirmationPage
+          isDarkTheme={isDarkTheme}
+          onHomeClick={showHome}
+          onProfileClick={showProfile}
+          onViewOrders={showProfile}
           onThemeToggle={() => setIsDarkTheme((current) => !current)}
         />
       )}
@@ -122,9 +205,9 @@ function App() {
             <Sidebar
               activeNav="home"
               onNavigate={(item) => {
-                if (item === 'account') {
-                  showProfile()
-                }
+                if (item === 'account') showProfile()
+                else if (item === 'sell') showSell()
+                else if (item === 'home') showHome()
               }}
             />
             <main className="main-content">

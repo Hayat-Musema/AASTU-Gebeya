@@ -25,6 +25,7 @@ export default function ProductDetailsPage({
   onLoginClick,
   onProfileClick,
   onSellClick,
+  onCheckoutClick,
   onThemeToggle,
 }) {
   const item = product || defaultProduct
@@ -103,6 +104,14 @@ export default function ProductDetailsPage({
               <button type="button"><i className="fab fa-telegram"></i> Telegram</button>
               <button type="button"><i className="fas fa-phone"></i> Call Seller</button>
             </div>
+
+            <button
+              className="buy-now-btn"
+              type="button"
+              onClick={onCheckoutClick}
+            >
+              <i className="fas fa-bag-shopping"></i> Buy Now
+            </button>
 
             <button className="report-link" type="button">
               <i className="fas fa-circle-exclamation"></i>

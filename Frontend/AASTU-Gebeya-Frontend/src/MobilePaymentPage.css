@@ -1,0 +1,493 @@
+/* ── Page shell — inherits checkout-page background via .mpay-page ── */
+.mpay-page {
+  min-height: 100vh;
+  background: #f4f6f7;
+  color: #173947;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Step bar back-logo button ── */
+.mpay-back-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #c9a227 !important;
+  font-weight: 700 !important;
+  font-size: 13px !important;
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+  margin-right: 8px;
+}
+
+.mpay-back-logo i {
+  font-size: 12px;
+}
+
+.mpay-stepbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ── Main card ── */
+.mpay-card {
+  margin-bottom: 0;
+}
+
+.mpay-card h2 {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0f2a35;
+  margin-bottom: 8px;
+  letter-spacing: -0.4px;
+}
+
+.mpay-subtitle {
+  color: #607178;
+  font-size: 13px;
+  line-height: 1.55;
+  margin-bottom: 24px;
+  max-width: 520px;
+}
+
+/* ── Wallet selector ── */
+.mpay-wallet-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.mpay-wallet {
+  border: 1px solid #dde3e6;
+  border-radius: 8px;
+  padding: 14px 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.mpay-wallet input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.mpay-radio-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #b0bec5;
+  flex-shrink: 0;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.mpay-wallet-active .mpay-radio-dot {
+  border-color: #c9a227;
+  background: #c9a227;
+  box-shadow: inset 0 0 0 3px #ffffff;
+}
+
+.mpay-wallet-active {
+  border-color: #c9a227;
+  background: #fdf8ec;
+}
+
+.mpay-wallet-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.mpay-wallet-text strong {
+  color: #1a2e36;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.mpay-wallet-text span {
+  color: #7c8d93;
+  font-size: 11px;
+}
+
+/* ── QR + phone panel ── */
+.mpay-panel {
+  background: #f0f3f8;
+  border-radius: 10px;
+  padding: 24px;
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 28px;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+/* Phone mock */
+.mpay-qr-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.mpay-phone-mock {
+  width: 120px;
+  height: 148px;
+  background: #2c3e45;
+  border-radius: 14px;
+  padding: 10px 8px;
+  box-shadow: 0 8px 24px rgba(20, 40, 48, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mpay-phone-screen {
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+
+.mpay-scan-label {
+  color: #607178;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+/* QR illustration */
+.qr-grid {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 3px;
+  padding: 4px;
+}
+
+.qr-pos {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border: 3px solid #1a2e36;
+  border-radius: 2px;
+}
+
+.qr-pos-tl { top: 4px; left: 4px; }
+.qr-pos-tr { top: 4px; right: 4px; }
+.qr-pos-bl { bottom: 4px; left: 4px; }
+
+.qr-pos-inner {
+  width: 8px;
+  height: 8px;
+  background: #1a2e36;
+  border-radius: 1px;
+  margin: 3px auto 0;
+}
+
+.qr-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 1px;
+  background: transparent;
+  align-self: center;
+  justify-self: center;
+}
+
+.qr-dot-on {
+  background: #1a2e36;
+}
+
+/* Phone input side */
+.mpay-phone-input-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.mpay-ussd-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: #607178;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.mpay-ussd-note i {
+  color: #c9a227;
+  font-size: 14px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ── Action buttons ── */
+.mpay-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.mpay-confirm-btn {
+  background: #c9a227;
+  color: #ffffff;
+  border: none;
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: 800;
+  min-height: 48px;
+  padding: 0 28px;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(201, 162, 39, 0.28);
+  transition: background 0.2s, box-shadow 0.2s;
+  white-space: nowrap;
+}
+
+.mpay-confirm-btn:hover {
+  background: #b08e1e;
+  box-shadow: 0 10px 22px rgba(201, 162, 39, 0.36);
+}
+
+.mpay-back-btn {
+  background: transparent;
+  color: #4a5c63;
+  border: 1px solid #c9a227;
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: 700;
+  min-height: 48px;
+  padding: 0 22px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+
+.mpay-back-btn:hover {
+  background: #fdf8ec;
+  color: #1a2e36;
+}
+
+/* ── Secure label ── */
+.mpay-secure {
+  margin-top: 0;
+}
+
+/* ── Order summary items ── */
+.mpay-summary-items {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mpay-summary-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mpay-summary-thumb {
+  width: 52px;
+  height: 52px;
+  border-radius: 6px;
+  background: #2c3e45;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 18px;
+}
+
+.mpay-summary-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.mpay-summary-info span {
+  color: #4a5c63;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.mpay-item-price {
+  color: #c9a227 !important;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+}
+
+.mpay-summary-divider {
+  height: 1px;
+  background: #e6ecee;
+  margin: 0 0 14px;
+}
+
+/* ── Delivery chip ── */
+.mpay-delivery-chip {
+  background: #edf0f2;
+  border-radius: 8px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  color: #4a5c63;
+}
+
+.mpay-delivery-chip i {
+  color: #c9a227;
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+.mpay-delivery-chip strong {
+  color: #0f2a35;
+  font-weight: 700;
+}
+
+/* ── Dark theme ── */
+.dark-theme .mpay-page {
+  background: #12191b;
+  color: #e8f4f1;
+}
+
+.dark-theme .mpay-card h2 {
+  color: #e8f4f1;
+}
+
+.dark-theme .mpay-subtitle,
+.dark-theme .mpay-ussd-note,
+.dark-theme .mpay-scan-label {
+  color: #9fb0ad;
+}
+
+.dark-theme .mpay-wallet {
+  border-color: rgba(141, 235, 211, 0.14);
+  background: transparent;
+}
+
+.dark-theme .mpay-wallet-active {
+  border-color: #c9a227;
+  background: #1e1a0a;
+}
+
+.dark-theme .mpay-wallet-text strong {
+  color: #e8f4f1;
+}
+
+.dark-theme .mpay-wallet-text span {
+  color: #9fb0ad;
+}
+
+.dark-theme .mpay-panel {
+  background: #202b2e;
+}
+
+.dark-theme .mpay-phone-mock {
+  background: #111b1e;
+}
+
+.dark-theme .mpay-phone-screen {
+  background: #2c3e45;
+}
+
+.dark-theme .qr-pos,
+.dark-theme .qr-pos-inner,
+.dark-theme .qr-dot-on {
+  border-color: #e8f4f1;
+  background: #e8f4f1;
+}
+
+.dark-theme .qr-pos {
+  background: transparent;
+}
+
+.dark-theme .checkout-field input {
+  background: #2c3e45;
+  color: #e8f4f1;
+}
+
+.dark-theme .checkout-field input::placeholder {
+  color: #6a7c82;
+}
+
+.dark-theme .checkout-field span {
+  color: #9fb0ad;
+}
+
+.dark-theme .mpay-back-btn {
+  color: #b6c7c4;
+  border-color: rgba(201, 162, 39, 0.5);
+}
+
+.dark-theme .mpay-back-btn:hover {
+  background: #1e1a0a;
+  color: #e8f4f1;
+}
+
+.dark-theme .mpay-summary-info span,
+.dark-theme .mpay-delivery-chip {
+  color: #9fb0ad;
+}
+
+.dark-theme .mpay-delivery-chip {
+  background: #202b2e;
+}
+
+.dark-theme .mpay-delivery-chip strong {
+  color: #e8f4f1;
+}
+
+.dark-theme .mpay-summary-divider {
+  background: rgba(141, 235, 211, 0.12);
+}
+
+/* ── Responsive ── */
+@media (max-width: 820px) {
+  .mpay-wallet-options {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .mpay-panel {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .mpay-qr-wrap {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .mpay-wallet-options {
+    grid-template-columns: 1fr;
+  }
+
+  .mpay-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .mpay-confirm-btn,
+  .mpay-back-btn {
+    width: 100%;
+    text-align: center;
+  }
+}

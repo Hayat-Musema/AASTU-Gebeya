@@ -21,6 +21,11 @@ export default function SellItemPage({
   onSellClick,
   onThemeToggle,
 }) {
+  const handlePost = (e) => {
+    e.preventDefault()
+    if (onProfileClick) onProfileClick()
+  }
+
   return (
     <div className="sell-item-page">
       <Header
@@ -39,7 +44,7 @@ export default function SellItemPage({
           <p>Clear the clutter. Fill your pockets. Curate your campus.</p>
         </section>
 
-        <form className="sell-item-card">
+        <form className="sell-item-card" onSubmit={handlePost}>
           <section className="product-gallery" aria-labelledby="gallery-title">
             <h2 id="gallery-title">
               <i className="fas fa-camera"></i>

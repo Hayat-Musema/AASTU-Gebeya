@@ -47,11 +47,11 @@ export default function Header({
     <header className="header">
       <div className="header-container">
         <div className="logo-section">
-          <h1 className="logo">AASTU Gebeya</h1>
+          <h1 className="logo" style={{ cursor: 'pointer' }} onClick={handleHomeClick}>AASTU Gebeya</h1>
         </div>
         
         <nav className="nav-links">
-          <a href="#home" onClick={handleHomeClick}>Home</a>
+          <a href="#home" onClick={handleHomeClick} data-home-link>Home</a>
           <a href="#about">About us</a>
           <a href="#explore" onClick={handleExploreClick} data-explore-link>Explore</a>
           <a href="#sell" onClick={handleSellClick}>Sell</a>

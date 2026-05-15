@@ -26,14 +26,14 @@ const listings = [
   },
 ]
 
-export default function ProfilePage({ onHomeClick, onLogout }) {
+export default function ProfilePage({ onHomeClick, onLogout, onExploreClick, onSellClick }) {
   return (
     <div className="profile-page">
       <header className="profile-topbar">
-        <h1>AASTU Gebeya</h1>
+        <h1 style={{ cursor: 'pointer' }} onClick={onHomeClick}>AASTU Gebeya</h1>
         <nav>
           <button type="button" onClick={onHomeClick}>Home</button>
-          <button type="button">Explore</button>
+          <button type="button" onClick={onExploreClick}>Explore</button>
           <button className="active" type="button">My Account</button>
         </nav>
       </header>
@@ -44,9 +44,8 @@ export default function ProfilePage({ onHomeClick, onLogout }) {
           showLogout
           showUserProfile={false}
           onNavigate={(item) => {
-            if (item === 'home') {
-              onHomeClick()
-            }
+            if (item === 'home') onHomeClick()
+            else if (item === 'sell') onSellClick?.()
           }}
           onLogout={onLogout}
         />
@@ -80,7 +79,7 @@ export default function ProfilePage({ onHomeClick, onLogout }) {
                 <h2>My Listings</h2>
                 <p>Manage your items in the university marketplace</p>
               </div>
-              <button type="button" className="create-listing">
+              <button type="button" className="create-listing" onClick={onSellClick}>
                 <i className="fas fa-plus-circle"></i>
                 Create New Listing
               </button>

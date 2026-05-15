@@ -282,3 +282,156 @@ img {
     font-size: 13px;
   }
 }
+
+/* ── Checkout page dark theme (cascades from .app-shell.dark-theme) ── */
+.dark-theme .checkout-page {
+  background: #12191b;
+  color: #e8f4f1;
+}
+
+.dark-theme .checkout-stepbar {
+  background: #111b1e;
+}
+
+.dark-theme .checkout-card {
+  background: #1b2426;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.dark-theme .checkout-card h2,
+.dark-theme .review-item-info strong,
+.dark-theme .order-summary-card h3,
+.dark-theme .order-total strong,
+.dark-theme .payment-option-text strong,
+.dark-theme .review-item-price {
+  color: #e8f4f1;
+}
+
+.dark-theme .checkout-field input,
+.dark-theme .checkout-field textarea {
+  background: #202b2e;
+  color: #e8f4f1;
+}
+
+.dark-theme .checkout-field input::placeholder,
+.dark-theme .checkout-field textarea::placeholder {
+  color: #6a7c82;
+}
+
+.dark-theme .checkout-field span {
+  color: #9fb0ad;
+}
+
+.dark-theme .payment-option {
+  border-color: rgba(141, 235, 211, 0.14);
+  background: transparent;
+}
+
+.dark-theme .payment-option-active {
+  border-color: #c9a227;
+  background: #1e1a0a;
+}
+
+.dark-theme .payment-option-text span,
+.dark-theme .review-item-info > span,
+.dark-theme .order-summary-list li,
+.dark-theme .order-total span {
+  color: #9fb0ad;
+}
+
+.dark-theme .order-summary-card {
+  background: #1b2426;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.dark-theme .order-total {
+  border-top-color: rgba(141, 235, 211, 0.12);
+}
+
+.dark-theme .order-terms,
+.dark-theme .order-secure {
+  color: #6a7c82;
+}
+
+.dark-theme .review-badge {
+  background: #162535;
+  color: #6ab4e8;
+}
+
+/* ── SellItemPage dark theme (ensure app-shell cascade works) ── */
+.dark-theme .sell-item-page {
+  background: #12191b;
+}
+
+/* ── MobilePaymentPage dark theme (cascades from .app-shell.dark-theme) ── */
+.dark-theme .mpay-page {
+  background: #12191b;
+  color: #e8f4f1;
+}
+
+.dark-theme .mpay-card h2 {
+  color: #e8f4f1;
+}
+
+.dark-theme .mpay-subtitle,
+.dark-theme .mpay-ussd-note,
+.dark-theme .mpay-scan-label {
+  color: #9fb0ad;
+}
+
+.dark-theme .mpay-wallet {
+  border-color: rgba(141, 235, 211, 0.14);
+  background: transparent;
+}
+
+.dark-theme .mpay-wallet-active {
+  border-color: #c9a227;
+  background: #1e1a0a;
+}
+
+.dark-theme .mpay-wallet-text strong {
+  color: #e8f4f1;
+}
+
+.dark-theme .mpay-wallet-text span {
+  color: #9fb0ad;
+}
+
+.dark-theme .mpay-panel {
+  background: #202b2e;
+}
+
+.dark-theme .mpay-phone-mock {
+  background: #111b1e;
+}
+
+.dark-theme .mpay-phone-screen {
+  background: #2c3e45;
+}
+
+.dark-theme .mpay-back-btn {
+  color: #b6c7c4;
+  border-color: rgba(201, 162, 39, 0.5);
+}
+
+.dark-theme .mpay-back-btn:hover {
+  background: #1e1a0a;
+  color: #e8f4f1;
+}
+
+.dark-theme .mpay-summary-info span,
+.dark-theme .mpay-delivery-chip {
+  color: #9fb0ad;
+}
+
+.dark-theme .mpay-delivery-chip {
+  background: #202b2e;
+}
+
+.dark-theme .mpay-delivery-chip strong {
+  color: #e8f4f1;
+}
+
+.dark-theme .mpay-summary-divider {
+  background: rgba(141, 235, 211, 0.12);
+}

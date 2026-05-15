@@ -1,6 +1,17 @@
+import { useState } from 'react'
 import './LoginPage.css'
 
-export default function LoginPage({ onBackClick, onProfileClick }) {
+export default function LoginPage({ onBackClick, onProfileClick, onSellerSignUp, onSignInClick }) {
+  const [selectedRole, setSelectedRole] = useState('buyer')
+
+  const handleSignUp = () => {
+    if (selectedRole === 'seller' && onSellerSignUp) {
+      onSellerSignUp()
+    } else {
+      onProfileClick()
+    }
+  }
+
   return (
     <main className="login-page">
       <section className="login-shell" aria-label="Create AASTU Curator account">
@@ -35,17 +46,29 @@ export default function LoginPage({ onBackClick, onProfileClick }) {
             <p>Start your journey as a curated student member.</p>
           </div>
 
-          <form className="signup-form">
+          <form className="signup-form" onSubmit={(e) => { e.preventDefault(); handleSignUp(); }}>
             <div className="role-group">
               <span>I WANT TO BE A...</span>
               <div className="role-options">
-                <label className="role-card active">
-                  <input type="radio" name="role" defaultChecked />
+                <label className={`role-card${selectedRole === 'buyer' ? ' active' : ''}`}>
+                  <input
+                    type="radio"
+                    name="role"
+                    value="buyer"
+                    checked={selectedRole === 'buyer'}
+                    onChange={() => setSelectedRole('buyer')}
+                  />
                   <i className="fas fa-bag-shopping"></i>
                   <strong>Buyer</strong>
                 </label>
-                <label className="role-card">
-                  <input type="radio" name="role" />
+                <label className={`role-card${selectedRole === 'seller' ? ' active' : ''}`}>
+                  <input
+                    type="radio"
+                    name="role"
+                    value="seller"
+                    checked={selectedRole === 'seller'}
+                    onChange={() => setSelectedRole('seller')}
+                  />
                   <i className="fas fa-store"></i>
                   <strong>Seller</strong>
                 </label>
@@ -82,14 +105,20 @@ export default function LoginPage({ onBackClick, onProfileClick }) {
               </span>
             </label>
 
-            <button className="signup-button" type="button" onClick={onProfileClick}>
+            <button className="signup-button" type="submit">
               <span>Sign Up</span>
               <i className="fas fa-arrow-right"></i>
             </button>
           </form>
 
           <p className="login-link">
-            Already have an account? <a href="#hub" onClick={onProfileClick}>Login to Hub</a>
+            Already have an account?{' '}
+            <a
+              href="#signin"
+              onClick={(e) => { e.preventDefault(); if (onSignInClick) onSignInClick() }}
+            >
+              Login to Hub
+            </a>
           </p>
         </div>
       </section>

@@ -249,6 +249,30 @@
   font-weight: 800;
 }
 
+.buy-now-btn {
+  width: 100%;
+  min-height: 52px;
+  border: 0;
+  border-radius: 8px;
+  background: #047c6d;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 18px;
+  box-shadow: 0 10px 22px rgba(4, 124, 109, 0.24);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.buy-now-btn:hover {
+  background: #036358;
+  box-shadow: 0 12px 26px rgba(4, 124, 109, 0.32);
+}
+
 .similar-heading-row {
   display: flex;
   justify-content: space-between;
